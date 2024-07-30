@@ -1,13 +1,15 @@
 
 function check(){
     var pan = $('#pan').val()
-    console.log(pan);
-    var match = /^([A-Z]{5}\[0-9]{4}\[A-Z]{1})/g;
+    var match = /^([A-Z]{5}[0-9]{4}[A-Z]{1})$/;
     if (pan.match(match)) {
-      alert('Valid')
+        var result = document.querySelector('.result')
+        result.innerHTML = 'Valid PAN Card'
+        $('.result').css('color','green')
     } else {
-        console.log(pan.match(match))
-      alert('Invalid')
+      var result = document.querySelector('.result')
+      result.innerHTML = 'Invalid PAN Card'
+      $('.result').css('color', 'red')
     }
 }
 
